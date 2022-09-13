@@ -16,7 +16,13 @@ dubbo:
     address: zookeeper://127.0.0.1:2181
   scan:
     base-packages: com.dubbo.producer.service
+  protocol:
+    port: 20881
+  metadata-report: #
+    address: zookeeper://127.0.0.1:2181
 
+admin:
+  config-center: zookeeper://127.0.0.1:2181
 
 
 
