@@ -1,0 +1,21 @@
+server:
+  port: 8082
+  servlet:
+    context-path: /
+    application-display-name: consumer
+
+spring:
+  application:
+    name: dubboConsumer
+
+#dubbo相關屬性
+dubbo:
+  application:
+    name: consumer-server
+  registry: #註冊中心地址
+    address: zookeeper://127.0.0.1:2181
+
+
+
+
+
