@@ -19,13 +19,12 @@ methods = {
         @Method(name = "getTicket", loadbalance = "leastActive")
         })
 @Component
-
 public class TicketServiceImpl implements TicketService {
 
 
     @Override
     public String getTicket() {
         String value = UUID.randomUUID().toString();
-        return "server 1, 給你一張票:"+ value;
+        return "server 2, 給你一張票:"+ value;
     }
 }

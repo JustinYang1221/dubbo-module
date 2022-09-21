@@ -1,5 +1,5 @@
 server:
-  port: 8082
+  port: 8080
   servlet:
     context-path: /
     application-display-name: consumer
@@ -14,6 +14,8 @@ dubbo:
     name: consumer-server
   registry: #註冊中心地址
     address: zookeeper://127.0.0.1:2181
+  consumer:
+    loadbalance: leastactive
 
 
 

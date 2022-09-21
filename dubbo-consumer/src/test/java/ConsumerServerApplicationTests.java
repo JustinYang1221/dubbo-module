@@ -22,6 +22,8 @@ public class ConsumerServerApplicationTests {
 
     @Test
     public void buyTicketTest(){
-        userService.buyTicket();
+        for(int i=0;i< 10; i++){
+            userService.buyTicket();
+        }
     }
 }

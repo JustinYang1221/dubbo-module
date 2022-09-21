@@ -1,12 +1,12 @@
 server:
-  port: 8081
+  port: 8082
   servlet:
-    context-path: /producer
-    application-display-name: producer
+    context-path: /producer2
+    application-display-name: producer2
 
 spring:
   application:
-    name: dubboProducer
+    name: dubboProducer2
 
 #dubbo相關屬性
 dubbo:
@@ -17,7 +17,7 @@ dubbo:
   scan:
     base-packages: com.dubbo.producer.service
   protocol:
-    port: 20881 #透過dubbo開放服務供給對外開放的port
+    port: 20882 #透過dubbo開放服務供給對外開放的port
   metadata-report: #要在dubbo-admin 服務信息及原數據能夠看到服務提供者開放的服務方法
     address: zookeeper://127.0.0.1:2181
   provider:

@@ -10,9 +10,9 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
  */
 
 @SpringBootApplication
-//@EnableDubbo
-public class ProducerApplication {
+@EnableDubbo
+public class Producer2Application {
     public static void main(String[] args){
-        SpringApplication.run(ProducerApplication.class, args);
+        SpringApplication.run(Producer2Application.class, args);
     }
 }

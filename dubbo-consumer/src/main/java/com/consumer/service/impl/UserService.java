@@ -13,7 +13,7 @@ import org.springframework.stereotype.Service;
 @Service
 public class UserService {
 
-    @Reference //遠程引用指定的服務, 按照全類名稱進行匹配, 看誰跟註冊中心註冊了這個全類名稱
+    @Reference //遠程引用指定的服務, 按照全類名稱進行匹配, 看誰跟註冊中心註冊了這個名稱
     TicketService ticketService;
 
     public void buyTicket(){
