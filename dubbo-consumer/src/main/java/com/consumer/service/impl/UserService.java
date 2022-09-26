@@ -1,6 +1,7 @@
 package com.consumer.service.impl;
 
-import com.dubbo.api.service.TicketService;
+//import com.dubbo.api.service.TicketService;
+import com.dubbo.producer.service.TicketService;
 import org.apache.dubbo.config.annotation.Reference;
 import org.springframework.stereotype.Service;
 

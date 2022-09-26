@@ -1,9 +1,11 @@
 package com.dubbo.producer.service.impl;
 
 
-import com.dubbo.api.service.TicketService;
+//import com.dubbo.api.service.TicketService;
+import com.dubbo.producer.service.TicketService;
 import org.apache.dubbo.config.annotation.Method;
 import org.apache.dubbo.config.annotation.Service;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 
 import java.util.UUID;
@@ -19,13 +21,14 @@ methods = {
         @Method(name = "getTicket", loadbalance = "leastActive")
         })
 @Component
-
 public class TicketServiceImpl implements TicketService {
 
+    @Value("${dubbo.protocol.port}")
+    private String dubboPort;
 
     @Override
     public String getTicket() {
         String value = UUID.randomUUID().toString();
-        return "server 1, 給你一張票:"+ value;
+        return "dubbo port=" + dubboPort + ", 給你一張票:"+ value;
     }
 }

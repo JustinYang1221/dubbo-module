@@ -13,17 +13,21 @@ dubbo:
   application:
     name: provider-server
   registry: #註冊中心地址
-    address: zookeeper://127.0.0.1:2181 #, multicast://127.0.0.1:88888
+    address: zookeeper://${zookeeperIp}:2181 #, multicast://127.0.0.1:88888
+
   scan:
     base-packages: com.dubbo.producer.service
   protocol:
-    port: 20881 #透過dubbo開放服務供給對外開放的port
+    # host: 172.21.0.5 原本是想用此屬性去向註冊中心註測, 但測試後沒用
+    port: ${dubboPort} #透過dubbo開放服務供給對外開放的port
+    #port: 20881 #透過dubbo開放服務供給對外開放的port
   metadata-report: #要在dubbo-admin 服務信息及原數據能夠看到服務提供者開放的服務方法
-    address: zookeeper://127.0.0.1:2181
+    address: zookeeper://${zookeeperIp}:2181
   provider:
-    loadbalance: leastactive
+    #host: 172.21.0.5 原本是想用此屬性去向註冊中心註測, 但測試後沒用
+    loadbalance: leastactive # 最少活躍數收到越少請求,相同活躍數的隨機，活躍數指呼叫前後時間計數差
 admin: #要在dubbo-admin 服務信息及原數據能夠看到服務提供者開放的服務方法
-  config-center: zookeeper://127.0.0.1:2181
+  config-center: zookeeper://${zookeeperIp}:2181
 
 
 
